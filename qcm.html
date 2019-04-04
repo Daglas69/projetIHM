@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+	<link href="css/style.css" rel="stylesheet" />
+	
+	<link href="data/icon.ico" rel="shortcut icon">
+    <title>QCM EN IHM</title>
+</head>
+ 
+
+<body>	
+<div class="container">
+	<div id="main"> <!-- pour fixer le footer lol -->
+
+	<!-- En tete de page  -->
+	<header class="row vertical-align">
+		<div class="col-sm-2 text-center">
+			<a href="index.html"><img src="data/logo.png" alt="Logo_page" title="Accueil" id="logo"/></a>
+		</div>
+		<div class="col-sm-8 text-center">
+			<h1>Le site pour faire un QCM</h1>
+		</div>
+	</header>
+
+	
+	<!-- Menu de la page  -->	
+	<nav class="row navbar navbar-default">
+	
+		<ul class="nav navbar-nav">
+            <li> <a href="index.html">Acceuil</a> </li>
+			<li class="active"> <a href="qcm.html">Créer un QCM</a> </li>
+            <li> <a href="apropos.html">A propos</a> </li>
+        </ul>
+    
+        <form class="navbar-form navbar-right inline-form">
+        	<div class="form-group">
+            	<input type="text" id="searchTxt" class="input-sm form-control" placeholder="Recherche" value="">
+            	<button type="button" class="btn btn-primary btn-sm" onClick="searchWord();"><span class="glyphicon glyphicon-eye-open"></span> rechercher</button>
+			</div>
+        </form>	
+		
+	</nav><br/><br/>
+
+	
+	<!-- Contenu de la page  -->
+	<section class="row" id="section">			
+			
+		<!-- Formulaire de la page  -->
+		<form>
+		<fieldset>
+		
+		<!-- Titre du QCM  -->
+		<div class="row">
+			<div class="col-sm-12">
+				<legend>QCM SUPER ...
+				<a href="#" class="link tooltip-link" 
+					data-toggle="tooltip" 
+					title="Ajoutez des question grâce à l'encadré gris">
+					<span class="glyphicon glyphicon-question-sign"></span>
+				</a>
+				</legend>
+			</div>
+		</div>
+		
+		<!-- Bloc ou les questions sont ajoutées interactivement  -->
+		<div id="QuestionsQCM"></div>
+		
+		<!-- Bloc de gestion des question -->	
+		<div id="gestQuestions">
+		<div class="form-group">
+			
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<label for="question">Intitulé de la question <span class="asterix">*</span></label>  
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2">
+					<b><input type="text" id="nomQuest" name="question" placeholder="Qui est Claude Bernard?" value="" class="form-control input-md"></b>
+				</div>
+			</div>
+			
+			<br/>
+			
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-1">
+					<b> Réponses : </b>
+					<a href="#" class="link tooltip-link" 
+					data-toggle="tooltip" 
+					title="Cochez les cases correspondant aux réponses justes !">
+					<span class="glyphicon glyphicon-ok-sign"></span>
+					</a>
+				</div>
+			</div>
+			 
+			</br>
+			
+			<div id="reps">
+			<div class="row vertical-align">
+				<div class="col-sm-1 col-sm-offset-1 text-center">
+					<label for="reponse">
+						<input type="checkbox">
+					</label>  
+				</div>
+				<div class="col-sm-3">
+					<input type="text" id="rep1" name="reponse" value="" placeholder="Réponse" class="form-control input-md">
+				</div>
+				<div class="col-sm-1">
+					<a href="#" class="supprRep" 
+						data-toggle="tooltip" 
+						title="Supprimer cette réponse">
+						<span class="glyphicon glyphicon glyphicon-remove text-danger"></span>
+					</a>
+				</div>
+			</div>
+			
+			<div class="row vertical-align">
+				<div class="col-sm-1 col-sm-offset-1 text-center">
+					<label for="reponse">
+						<input type="checkbox">
+					</label>  
+				</div>
+				<div class="col-sm-3">
+					<input type="text" id="rep2" name="reponse" value="" placeholder="Réponse" class="form-control input-md">
+				</div>
+				<div class="col-sm-1">
+					<a href="#" class="supprRep" 
+						data-toggle="tooltip" 
+						title="Supprimer cette réponse">
+						<span class="glyphicon glyphicon glyphicon-remove text-danger"></span>
+					</a>
+				</div>
+			</div>
+			
+			<div class="row vertical-align">
+				<div class="col-sm-1 col-sm-offset-1 text-center">
+					<label for="reponse">
+						<input type="checkbox">
+					</label>  
+				</div>
+				<div class="col-sm-3">
+					<input type="text" id="rep3" name="reponse" value="" placeholder="Réponse" class="form-control input-md">
+				</div>
+				<div class="col-sm-1">
+					<a href="#" class="supprRep" 
+						data-toggle="tooltip" 
+						title="Supprimer cette réponse">
+						<span class="glyphicon glyphicon glyphicon-remove text-danger"></span>
+					</a>
+				</div>
+			</div>
+			
+			<div class="row vertical-align">
+				<div class="col-sm-1 col-sm-offset-1 text-center">
+					<label for="reponse">
+						<input type="checkbox">
+					</label>  
+				</div>
+				<div class="col-sm-3">
+					<input type="text" id="rep4" name="reponse" value="" placeholder="Réponse" class="form-control input-md">
+				</div>
+				<div class="col-sm-1">
+					<a href="#" class="supprRep" 
+						data-toggle="tooltip" 
+						title="Supprimer cette réponse">
+						<span class="glyphicon glyphicon glyphicon-remove text-danger"></span>
+					</a>
+				</div>
+			</div>
+			</div> <!-- Fin reponses -->
+			
+			<br/>
+			
+			<div class="row">
+				<div class="col-sm-1 col-sm-offset-2">
+					<a id="addRep" onclick="ajout_Rep()" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> réponse</a>
+				</div>					
+			</div>	
+			
+			<br/><br/>
+			
+			<div class="row">
+				<div class="col-sm-2 col-sm-offset-9">
+					<button id="addQuest" type="button" onclick="ajout_Quest();" class="btn btn-primary">Ajouter une question</button>
+				</div>
+			</div>
+		</div>
+		</div>
+		
+		<div class="row validerQCM">
+			<div class="col-sm-12 text-center">
+				<button id="btn-validerQCM" type="button" onclick="valider_QCM();" class="btn btn-success">Valider le QCM</button>
+			</div>	
+		</div>
+		
+	</section>
+	</div>
+	
+	
+	<!-- Pied de page  -->
+    <nav class="navbar navbar-default navbar-fixed-bottom" id="footer">
+		<a class="lien-footer" href="https://perso.liris.cnrs.fr/stephanie.jean-daubias/enseignement/IHM/" alt="Page IHM">
+			Année 2019 - Projet pour: IHM - Interactions Homme-Machine
+		</a>  
+		<a class="lien-footer" href="https://www.univ-lyon1.fr/" alt="Page UCBL"> - UCBL Lyon 1</a>
+    </nav>
+
+	
+<!-- Fin div container  -->
+</div>
+
+
+
+<!-- On charge les scripts à la fin pour ne pas gener l'affichage de la page  -->
+<script src="lib/js/jquery-3.3.1.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/js/sweetalert.js"></script>
+<script src="lib/js/html2pdf.bundle.min.js"></script>
+<script src="js/scripts.js"></script>
+
+
+</body>
+</html>

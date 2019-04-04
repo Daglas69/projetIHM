@@ -1,0 +1,103 @@
+header {
+	margin-bottom: 2em;
+}
+
+nav {
+	margin-top: 1em;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+	font-size: 1em;
+}
+
+/* Bloc de création d'une question */
+#gestQuestions {
+	background-color: #C2C2C2;
+	padding: 1em;
+	margin-top: 2em;
+	margin-bottom: 1em;
+}
+
+/* Bouton valider pour terminer le QCM */
+.validerQCM {
+	margin-bottom: 7em;
+}
+#btn-validerQCM {
+	width: 15em;
+	height: 4em;
+	font-size: larger;
+}
+
+/* Questions ajoutées au QCM */
+.questQCM {
+	margin: 2em 0 2em;
+	padding: 1em;
+	background-color: #B0C4DE;
+}
+
+.questQCM input[type=text] {
+	border: 2px solid #9E9F9F;
+	background-color: #DEEBF9;
+	margin: 2px;
+}
+
+/* Pour les croix a droite des réponses */
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+
+/* Astérisque de champs obligatoire */
+.asterix {
+	color: #A52A2A;
+	font-weight: bold;
+	font-size: larger;
+}
+
+#footer {
+	background-color: #95C9E6;
+	padding-top: 1em;
+	margin: 3px;
+	text-align: center;
+	border: 1px solid #000000;
+}
+
+/* Icone fleche pour collapse */ 
+.panel-title:after {
+	content: "\f107";
+    font-size: 2em;
+	font-family: "FontAwesome";
+	top: -3px;
+	right: -1em;
+	position: absolute;
+	color: #13233D;
+}
+.panel-title[aria-expanded="true"]:after {
+	content: "\f106";
+}
+
+#img-acceuil {
+	margin-top: 5em;
+	max-width: 500px;
+	max-height: auto;
+}
+
+/* Affichage des questions une fois le QCM validé */
+#blocQuest-valide {
+	margin-bottom: 7em;
+}
+.question-valide {
+	background-color: #afc2e0;
+	padding: 1em;
+	margin: 1em;
+}
+.rep-valide {
+	font-size: larger;
+}
+#btn-export-valide {
+	margin-bottom: 3em;
+}
